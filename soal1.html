@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kalkulator Luas Segitiga</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #999;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #hasilLuas {
+            font-size: 20px;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Kalkulator Luas Segitiga</h1>
+    <p>Masukkan nilai alas dan tinggi untuk menghitung luas segitiga.</p>
+
+    <label for="alas">Alas:</label>
+    <input type="number" id="alas" placeholder="Masukkan panjang alas" required>
+
+    <label for="tinggi">Tinggi:</label>
+    <input type="number" id="tinggi" placeholder="Masukkan tinggi" required>
+
+    <button onclick="hitungLuasSegitiga()">Hitung Luas</button>
+
+    <p id="hasilLuas"></p>
+</div>
+
+<script>
+    function hitungLuasSegitiga() {
+        var alas = parseFloat(document.getElementById('alas').value);
+        var tinggi = parseFloat(document.getElementById('tinggi').value);
+
+        if (!isNaN(alas) && !isNaN(tinggi)) {
+            var luas = 0.5 * alas * tinggi;
+            document.getElementById('hasilLuas').textContent = "Luas Segitiga: " + luas;
+        } else {
+            document.getElementById('hasilLuas').textContent = "Masukkan angka yang valid untuk alas dan tinggi.";
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Luas Persegi Panjang</title>
+</head>
+<body style="background-color: #f2f2f2; text-align: center; font-family: Arial, sans-serif; padding: 20px;">
+
+    <h1 style="color: #333; margin-bottom: 20px;">Luas Persegi Panjang</h1>
+    
+    <div style="max-width: 300px; margin: 0 auto; background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 10px;">
+        <label for="panjang" style="display: block; font-size: 18px; color: #333; margin-bottom: 10px;">Panjang:</label>
+        <input type="number" id="panjang" style="width: 100%; padding: 10px; font-size: 16px; border: 1px solid #999; border-radius: 5px; margin-bottom: 20px;" placeholder="Masukkan panjang" required>
+
+        <label for="lebar" style="display: block; font-size: 18px; color: #333; margin-bottom: 10px;">Lebar:</label>
+        <input type="number" id="lebar" style="width: 100%; padding: 10px; font-size: 16px; border: 1px solid #999; border-radius: 5px; margin-bottom: 20px;" placeholder="Masukkan lebar" required>
+
+        <button onclick="hitungLuas()" style="width: 100%; padding: 10px; font-size: 18px; background-color: #3498db; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Hitung Luas</button>
+
+        <p id="hasilLuas" style="font-size: 20px; color: #333; margin-top: 20px;"></p>
+
+        <script>
+            function hitungLuas() {
+                var panjang = parseFloat(document.getElementById('panjang').value);
+                var lebar = parseFloat(document.getElementById('lebar').value);
+
+                if (!isNaN(panjang) && !isNaN(lebar)) {
+                    var luasPersegiPanjang = panjang * lebar;
+                    document.getElementById('hasilLuas').textContent = "Luas Persegi Panjang: " + luasPersegiPanjang;
+                } else {
+                    document.getElementById('hasilLuas').textContent = "Masukkan angka yang valid untuk panjang dan lebar.";
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
